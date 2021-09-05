@@ -1,7 +1,6 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import "./styles/homepagestyles.scss";
-import "./info";
 import contentinfo from "./info";
 
 function createCard(product){
@@ -10,12 +9,14 @@ function createCard(product){
         img = {product.img}
         title = {product.title}
         size = {product.size}
+        linkUrl = {product.linkUrl}
         />
     );
 }
 
 function Homepage(){
     return ( 
+        
         <div className="homepage">
         <div className="directory-menu">{contentinfo.map(createCard)}</div>
        
