@@ -1,47 +1,28 @@
 import React from "react";
-import "./styles/homepagestyles.scss"
+import MenuItem from "./MenuItem";
+import "./styles/homepagestyles.scss";
+import "./info";
+import contentinfo from "./info";
+
+function createCard(product){
+    return(
+        <MenuItem
+        img = {product.img}
+        title = {product.title}
+        size = {product.size}
+        />
+    );
+}
 
 function Homepage(){
-    return(
-    <div className="homepage">
-        <div className="directory-menu">
-            <div className="menu-item">
-                <div className="content">
-                    <h1 className="title">Sarees</h1>
-                    <span className="subtitle">Shop Now</span>
-            </div>
-            
+    return ( 
+        <div className="homepage">
+        <div className="directory-menu">{contentinfo.map(createCard)}</div>
+       
         </div>
-
-        <div className="menu-item">
-            <div className="content">
-                <h1 className="title">Jewlery</h1>
-                <span className="subtitle">Shop Now</span>
-            </div>
-        </div>
-
-        <div className="menu-item">
-            <div className="content">
-                <h1 className="title">Shoes</h1>
-                <span className="subtitle">Shop Now</span>
-            </div>
-        </div>
-
-        <div className="menu-item">
-            <div className="content">
-                <h1 className="title">WOMEN</h1>
-                <span className="subtitle">Shop Now</span>
-            </div>
-        </div>
-
-        <div className="menu-item">
-            <div className="content">
-                <h1 className="title">MEN</h1>
-                <span className="subtitle">Shop Now</span>
-            </div>
-        </div>
-    </div>
-    </div>
-    )}
+        
+    
+    )
+}
 
 export default Homepage;
