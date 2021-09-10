@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import FormInput from "./FormInput";
 import Button from "./Button";
 import "./styles/signIn.scss";
+import { signInWithGoogle } from "../firebase/firebase.utils.js"
+
+
 
 function SignIn(props){
 
@@ -68,9 +71,8 @@ function SignIn(props){
                 label = "Confirm Password"
                     required
                 />          
-           <Button 
-           type="submit"
-            > SIGN UP</Button>
+           <Button type="submit"> SIGN UP </Button>
+           <Button onClick={signInWithGoogle}> Sign in with Google  </Button>
           </form>
         </div>
       );
